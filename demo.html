@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <style type="text/css">
+	/* *{margin:0;padding:0} */
+	ul li{
+	 width:100px;
+	 height:30px;
+	 border:1px solid black;
+	 list-style:none;
+	 float:left;
+	 text-align:center;
+	 line-height:30px;
+	 margin-left:5px;
+	 background:#5d5d5d;
+	 color:white;
+	}
+	#main{
+		width:520px;
+		height:200px;
+		border:3px solid black;
+		overflow:hidden;
+		position:relative;
+		z-index:1;
+	}
+	#main .show{
+	 width:2080px;
+	 height:100%;
+	 
+	}
+	#main .show .pred{
+	 width:520px;
+	 height:200px;
+	 background:red;
+	 float:left;
+	}
+	#main .show .pblue{
+	 width:520px;
+	 height:200px;
+	 background:blue;
+	 float:left;
+	}
+	#main .show .pyellow{
+	 width:520px;
+	 height:200px;
+	 background:yellow;
+	 float:left;
+	}
+	#main .show .ppink{
+	 width:520px;
+	 height:200px;
+	 background:pink;
+	 float:left;
+	}
+  </style>
+ </head>
+ <body>
+   <div id="main"> 
+	<div class="show">
+	 <div class="pred">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	 </div>
+	 <div class="pblue">
+		<ul>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+		</ul>
+	 </div>
+	 <div class="pyellow">
+		<ul>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+		</ul>
+	 </div>
+	 <div class="ppink">
+		<ul>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+		</ul>
+	 </div>
+	</div>
+   </div>
+   <ul id="nav">
+	<li onclick="fla(1)">red</li>
+	<li onclick="fla(2)">blue</li>
+	<li onclick="fla(3)">yellow</li>
+	<li onclick="fla(4)">pink</li>
+  </ul>
+  <script>
+   var ul = document.getElementById("nav");
+   var li = ul.getElementsByTagName("li");
+   for (i=0;i<li.length ;i++ )
+   {
+	   li[i].onmouseover=function(){
+		   this.style.background="#00ff00";
+	   }
+	   li[i].onmouseout=function(){
+		   this.style.background="#5d5d5d";
+	   }	   
+   }
+   function fla(a){
+     document.getElementsByClassName("show")[0].style.marginLeft="-"+520*(a-1)+"px";
+   }
+  </script>
+ </body>
+</html>
